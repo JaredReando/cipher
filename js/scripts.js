@@ -12,7 +12,10 @@ $(document).ready(function() {
   }
 
   var insertHalf = function(str) {
-    return Math.floor(str.length/2);
+    var half = Math.floor(str.length/2);
+    var middle = str.charAt(half);
+    return middle + initials(str);
+
   }
 
   $("#left").click( function() {
