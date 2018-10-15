@@ -14,20 +14,17 @@ $(document).ready(function() {
   var insertHalf = function(str) {
     var half = Math.floor(str.length/2);
     var middle = str.charAt(half);
-    return middle + initials(str);
-
+    return reverse(middle + initials(str));
   }
 
+  var sentence = prompt("Enter a sentence:");
+
   $("#left").click( function() {
-    $("#sentence").text("Clicked left image");
+    $("#sentence").text(sentence);
   });
 
   $("#right").click( function() {
-    $("#sentence").text("Clicked right image");
+    $("#sentence").text(insertHalf(sentence));
   });
 
-  var sentence = prompt("Enter a sentence:");
-  var reversedInitials = initials(sentence);
-  var half = insertHalf(sentence);
-  console.log(sentence + " -> " + half);
 });
